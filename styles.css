@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.wave-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wave {
+  fill: rgba(255, 255, 255, 0.05);
+  animation: wave 10s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    d: path("M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z");
+  }
+  50% {
+    d: path("M0,100 C150,0 350,200 500,100 L500,00 L0,0 Z");
+  }
+}
+
+.main-container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.auth-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form {
+  color: white;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.floating-form .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.floating-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+}
+
+.floating-form .form-floating label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.chat-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 15px;
+  max-width: 80%;
+  animation: messageAppear 0.3s ease-out;
+}
+
+.message.sent {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  margin-left: auto;
+}
+
+.message.received {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin-right: auto;
+}
+
+.message-input-form {
+  padding: 1rem 1rem 1.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input-wrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+.char-counter {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  color: white;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.send-button {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  color: #fdbb2d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(45deg, #243782, #d62424);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
