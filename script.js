@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+  const SUPABASE_URL = "https://yqvyfruagujrkityxzkt.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxdnlmcnVhZ3VqcmtpdHl4emt0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY3OTEyMzksImV4cCI6MjA1MjM2NzIzOX0.Rh_Mt1FRaCzksjuR0vaWt9kkz57MJsytirlYmp6oPTc";
   const MAX_MESSAGE_LENGTH = 300;
   const MESSAGE_COOLDOWN = 30000; // 30 seconds in milliseconds
   const RAPID_MESSAGE_THRESHOLD = 3; // Number of messages
